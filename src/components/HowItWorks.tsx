@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Wallet, School, CreditCard, CheckCircle } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 const steps = [
   {

@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -13,7 +13,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="md:w-1/2 mb-8 md:mb-0"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Revolutionize School Payments with Crypto</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Innovate School Payments with Crypto</h1>
           <p className="text-xl mb-8">Secure, fast, and convenient payments for educational institutions.</p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -31,9 +31,9 @@ export default function Hero() {
         >
           <div className="relative w-full max-w-lg overflow-hidden">
             <Image
-              src="/Student.jpeg"
+              src="/images/student.png"
               alt="Edupay Dashboard"
-              width={600}
+              width={400}
               height={400}
               className="rounded-lg md:rounded-2xl lg:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-102 object-cover w-full h-auto"
             />
@@ -41,5 +41,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

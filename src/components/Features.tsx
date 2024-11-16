@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Zap, Globe, Coins, Users, BarChart } from 'lucide-react'
-import { FeatureCard } from '@/app/components/FeatureCard'
+import { FeatureCard } from './FeatureCard'
 
 
 const features = [
