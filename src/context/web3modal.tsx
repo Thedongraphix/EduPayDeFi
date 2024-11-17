@@ -1,8 +1,18 @@
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+
 'use client';
 
 import { createAppKit } from '@reown/appkit/react';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
 import { mainnet, arbitrum } from '@reown/appkit/networks';
+
+interface Features {
+  analytics: boolean;
+  auth: boolean;
+  wallet: boolean;
+}
 
 // 1. Get projectId at https://cloud.reown.com
 const projectId = '57316f35292be788506e254eb0524d62';
@@ -22,11 +32,10 @@ createAppKit({
   networks: [mainnet, arbitrum],
   projectId,
   features: {
-    analytics: true, // Optional - defaults to your Cloud configuration
-    auth: true,      // Enable authentication
-    wallet: true, 
-       // Enable wallet connections (e.g., MetaMask)
-  } as any
+    analytics: true,
+    auth: true,
+    wallet: true,
+  } as Features,
 })
 
 

@@ -10,7 +10,7 @@ import { Overview } from "@/components/dashboard/Overview";
 import { RecentPayments } from "@/components/dashboard/recent-payments";
 import { Button } from "@/components/ui/button";
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker";
-import { CreditCard, DollarSign, Users, School, BookOpen, GraduationCap } from "lucide-react";
+import { DollarSign, Users,BookOpen, GraduationCap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Dashboard",

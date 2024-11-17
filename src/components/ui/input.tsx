@@ -1,4 +1,7 @@
 import * as React from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+
 
 import { cn } from '@/lib/utils';
 
