@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -15,6 +16,7 @@ export default function Hero() {
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Innovate School Payments with Crypto</h1>
           <p className="text-xl mb-8">Secure, fast, and convenient payments for educational institutions.</p>
+          <Link href = "/dashboard">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -22,6 +24,7 @@ export default function Hero() {
           >
             Get Started
           </motion.button>
+          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 50 }}
