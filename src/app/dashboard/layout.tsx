@@ -19,16 +19,22 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className="flex h-screen overflow-hidden">
-            <Sidebar />
+          <div className="flex h-screen overflow-hidden bg-background">
+            {/* Desktop Sidebar */}
+            <div className="hidden md:flex md:w-64 md:flex-shrink-0">
+              <Sidebar />
+            </div>
+            
+            {/* Main Content */}
             <div className="flex-1 flex flex-col overflow-hidden">
               <Header />
               <main className="flex-1 overflow-y-auto bg-muted/10">
-                {/* Place the Web3Modal button */}
-                <div className="p-4">
+                <div className="sticky top-0 z-10 bg-background/95 backdrop-blur p-4 border-b">
                   <Web3ModalButton />
                 </div>
-                {children}
+                <div className="container mx-auto px-4 py-6">
+                  {children}
+                </div>
               </main>
             </div>
           </div>

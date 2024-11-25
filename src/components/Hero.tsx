@@ -1,8 +1,7 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -14,9 +13,8 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="md:w-1/2 mb-8 md:mb-0"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Innovate School Payments with Crypto</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Revolutionize School Payments with Crypto</h1>
           <p className="text-xl mb-8">Secure, fast, and convenient payments for educational institutions.</p>
-          <Link href = "/dashboard">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -24,25 +22,22 @@ export default function Hero() {
           >
             Get Started
           </motion.button>
-          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="md:w-1/2 flex justify-center items-center"
+          className="md:w-1/2"
         >
-          <div className="relative w-full max-w-lg overflow-hidden">
-            <Image
-              src="/images/student.png"
-              alt="Edupay Dashboard"
-              width={400}
-              height={400}
-              className="rounded-lg md:rounded-2xl lg:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-102 object-cover w-full h-auto"
-            />
-          </div>
+          <Image
+          src="/images/student.jpg"
+          alt="Edupay Dashboard"
+          width={300}
+          height={500}
+          className="rounded-lg shadow-2xl"
+          />
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

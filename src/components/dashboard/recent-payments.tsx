@@ -6,7 +6,7 @@ const recentPayments = [
   {
     id: "1",
     name: "Sarah Johnson",
-    email: "sarah.j@example.com",
+    email: "sarah.j@example.com", 
     amount: 499.99,
     status: "completed",
     date: "2024-03-20",
@@ -34,10 +34,10 @@ const recentPayments = [
 
 export function RecentPayments() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {recentPayments.map((payment) => (
-        <div key={payment.id} className="flex items-center">
-          <Avatar className="h-9 w-9">
+        <div key={payment.id} className="flex items-center gap-4">
+          <Avatar className="h-9 w-9 shrink-0">
             <AvatarImage src={`https://avatar.vercel.sh/${payment.email}`} alt={payment.name} />
             <AvatarFallback>
               {payment.name
@@ -46,11 +46,11 @@ export function RecentPayments() {
                 .join("")}
             </AvatarFallback>
           </Avatar>
-          <div className="ml-4 space-y-1">
-            <p className="text-sm font-medium leading-none">{payment.name}</p>
-            <p className="text-xs text-muted-foreground">{payment.course}</p>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium leading-none truncate">{payment.name}</p>
+            <p className="text-xs text-muted-foreground truncate">{payment.course}</p>
           </div>
-          <div className="ml-auto font-medium">
+          <div className="text-right">
             <div className={payment.status === "pending" ? "text-yellow-500" : "text-green-500"}>
               ${payment.amount}
             </div>

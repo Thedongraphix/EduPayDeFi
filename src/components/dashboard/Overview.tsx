@@ -1,6 +1,7 @@
 "use client";
 
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Card } from "@/components/ui/card";
 
 const data = [
   {
@@ -31,31 +32,54 @@ const data = [
 
 export function Overview() {
   return (
-    <ResponsiveContainer width="100%" height={350}>
-      <LineChart data={data}>
-        <XAxis
-          dataKey="name"
-          stroke="#888888"
-          fontSize={12}
-          tickLine={false}
-          axisLine={false}
-        />
-        <YAxis
-          stroke="#888888"
-          fontSize={12}
-          tickLine={false}
-          axisLine={false}
-          tickFormatter={(value) => `$${value}`}
-        />
-        <Tooltip />
-        <Line
-          type="monotone"
-          dataKey="total"
-          stroke="#0ea5e9"
-          strokeWidth={2}
-          dot={false}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="h-[350px] w-full">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          data={data}
+          margin={{
+            top: 5,
+            right: 10,
+            left: 10,
+            bottom: 0,
+          }}
+        >
+          <XAxis
+            dataKey="name"
+            stroke="#888888"
+            fontSize={12}
+            tickLine={false}
+            axisLine={false}
+            padding={{ left: 10, right: 10 }}
+          />
+          <YAxis
+            stroke="#888888"
+            fontSize={12}
+            tickLine={false}
+            axisLine={false}
+            tickFormatter={(value) => `$${value}`}
+            width={60}
+          />
+          <Tooltip
+            content={({ active, payload }) => {
+              if (active && payload && payload.length) {
+                return (
+                  <Card className="p-2">
+                    <p className="text-sm font-medium">${payload[0].value}</p>
+                  </Card>
+                );
+              }
+              return null;
+            }}
+          />
+          <Line
+            type="monotone"
+            dataKey="total"
+            stroke="hsl(var(--primary))"
+            strokeWidth={2}
+            dot={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
