@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AnimatedGradientBorder } from "@/components/ui/animated-gradient-border";
-import { ArrowRight, Wallet } from "lucide-react";
+import { ArrowRight} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
