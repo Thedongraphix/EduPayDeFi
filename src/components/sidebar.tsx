@@ -12,6 +12,7 @@ import {
   Wallet,
   BookOpen,
 } from "lucide-react";
+import { Web3ModalButton } from '@/context/web3modal';
 
 const routes = [
   {
@@ -57,29 +58,32 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col h-full border-r bg-background">
       <div className="p-6">
-        <Link href="/dashboard" className="flex items-center gap-2">
+        <Link href="/dashboard">
           <h1 className="text-xl font-bold">Edupay</h1>
         </Link>
       </div>
       
-      <div className="flex-1 px-4">
-        <nav className="space-y-1">
-          {routes.map((route) => (
-            <Link
-              key={route.href}
-              href={route.href}
-              className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
-                pathname === route.href 
-                  ? "bg-accent text-accent-foreground" 
-                  : "text-muted-foreground"
-              )}
-            >
-              <route.icon className="h-4 w-4" />
-              <span>{route.label}</span>
-            </Link>
-          ))}
-        </nav>
+      <nav className="flex-1 px-4 space-y-1">
+        {routes.map((route) => (
+          <Link
+            key={route.href}
+            href={route.href}
+            className={cn(
+              "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+              pathname === route.href 
+                ? "bg-accent text-accent-foreground" 
+                : "text-muted-foreground"
+            )}
+          >
+            <route.icon className="h-4 w-4" />
+            <span>{route.label}</span>
+          </Link>
+        ))}
+      </nav>
+
+      {/* Show Web3Modal button in mobile sidebar */}
+      <div className="p-4 md:hidden">
+        <Web3ModalButton />
       </div>
     </div>
   );

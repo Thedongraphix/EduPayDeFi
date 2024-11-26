@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <div className="p-4 md:p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Dashboard</h2>
+        <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <CalendarDateRangePicker />
-          <Button className="w-full sm:w-auto">
+          <Button>
             <Download className="mr-2 h-4 w-4" />
             Download Report
           </Button>
@@ -32,7 +32,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
@@ -42,7 +42,7 @@ export default function DashboardPage() {
             <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Students</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
@@ -52,7 +52,7 @@ export default function DashboardPage() {
             <p className="text-xs text-muted-foreground">+180 since last month</p>
           </CardContent>
         </Card>
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Courses</CardTitle>
             <BookOpen className="h-4 w-4 text-muted-foreground" />
@@ -62,7 +62,7 @@ export default function DashboardPage() {
             <p className="text-xs text-muted-foreground">+12 new this month</p>
           </CardContent>
         </Card>
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Faculty Members</CardTitle>
             <GraduationCap className="h-4 w-4 text-muted-foreground" />
@@ -75,16 +75,16 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-4 grid-cols-1 lg:grid-cols-7">
-        <Card className="col-span-full lg:col-span-4 hover:shadow-lg transition-shadow">
+        <Card className="col-span-full lg:col-span-4">
           <CardHeader>
             <CardTitle>Revenue Overview</CardTitle>
             <CardDescription>Monthly payment trends across all courses</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pl-2">
             <Overview />
           </CardContent>
         </Card>
-        <Card className="col-span-full lg:col-span-3 hover:shadow-lg transition-shadow">
+        <Card className="col-span-full lg:col-span-3">
           <CardHeader>
             <CardTitle>Recent Transactions</CardTitle>
             <CardDescription>Latest payment activities</CardDescription>
