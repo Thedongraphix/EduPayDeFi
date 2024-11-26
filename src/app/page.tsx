@@ -1,22 +1,25 @@
-import Layout from '@/components/Layout';
-import Hero from '@/components/Hero';
-import Features from '@/components/Features';
-import HowItWorks from '@/components/HowItWorks';
-import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
+import { Hero } from "@/components/sections/hero";
+import { Features } from "@/components/sections/features";
+import { HowItWorks } from "@/components/landing/how-it-works";
+import { StatsCounter } from "@/components/landing/stats-counter";
+import { TrustIndicators } from "@/components/landing/trust-indicators";
+import { Testimonials } from "@/components/sections/testimonials";
+import { FAQ } from "@/components/sections/faq";
+import { CTASection } from "@/components/landing/cta-section";
+import { Footer } from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <Layout>
+    <main className="min-h-screen bg-background">
       <Hero />
+      <StatsCounter />
       <Features />
       <HowItWorks />
+      <TrustIndicators />
       <Testimonials />
-      <Pricing />
       <FAQ />
-      <CTA />
-    </Layout>
+      <CTASection />
+      <Footer />
+    </main>
   );
 }
