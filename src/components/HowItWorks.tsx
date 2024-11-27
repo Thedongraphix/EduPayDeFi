@@ -1,86 +1,86 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { Wallet, School, CreditCard, CheckCircle } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Wallet, ArrowRight, CreditCard, CheckCircle } from "lucide-react";
 
 const steps = [
   {
     icon: Wallet,
-    title: 'Connect Your Wallet',
-    description: 'Link your preferred cryptocurrency wallet to your Edupay account.',
-    color: 'from-blue-500 to-blue-700'
-  },
-  {
-    icon: School,
-    title: 'Choose Your Institution',
-    description: 'Select your school or educational institution from our extensive list.',
-    color: 'from-purple-500 to-purple-700'
+    title: "Connect Wallet",
+    description: "Link your crypto wallet securely to your EduPay account",
   },
   {
     icon: CreditCard,
-    title: 'Enter Payment Details',
-    description: 'Input the payment amount and any additional required information.',
-    color: 'from-green-500 to-green-700'
+    title: "Choose Payment",
+    description: "Select the school and payment amount in your preferred crypto",
   },
   {
     icon: CheckCircle,
-    title: 'Confirm and Send Payment',
-    description: 'Review the transaction details and confirm the payment.',
-    color: 'from-yellow-500 to-yellow-700'
-  }
-]
+    title: "Instant Confirmation",
+    description: "Receive immediate confirmation of your payment",
+  },
+];
 
-export default function HowItWorks() {
+export function HowItWorks() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="w-full py-20 relative overflow-hidden">
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 rounded-[0rem]"
-        animate={{
-          background: [
-            'linear-gradient(to bottom right, #312e81, #5b21b6, #1e3a8a)',
-            'linear-gradient(to bottom right, #1e3a8a, #312e81, #5b21b6)',
-            'linear-gradient(to bottom right, #5b21b6, #1e3a8a, #312e81)',
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      />
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+    <section className="py-24 relative overflow-hidden" ref={ref}>
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white dark:from-blue-950/20 dark:to-background" />
+      
+      <div className="container px-4 mx-auto relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-16 text-white"
+          className="text-center mb-12"
         >
-          How Edupay Works
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            How It Works
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Three simple steps to revolutionize your school payment experience
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8 relative">
+          {/* Connection Lines */}
+          <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-blue-200 dark:from-blue-800 dark:via-indigo-800 dark:to-blue-800 transform -translate-y-1/2" />
+
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative"
             >
-              <Card className="bg-white bg-opacity-10 backdrop-blur-sm border-none text-white h-full rounded-[2rem] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                <CardHeader className="pb-4">
-                  <div className={`w-16 h-16 rounded-[1.25rem] bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 transform transition-all duration-300 hover:rotate-12`}>
-                    <step.icon className="w-8 h-8 text-white" />
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-[0_0_50px_-12px] shadow-blue-500/30 dark:shadow-blue-500/10 hover:shadow-blue-500/40 dark:hover:shadow-blue-500/20 transition-shadow">
+                <div className="relative z-10">
+                  <div className="flex justify-center mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-indigo-500 rounded-full blur-lg opacity-20" />
+                      <div className="relative bg-gradient-to-tr from-blue-600 to-indigo-600 p-4 rounded-full">
+                        <step.icon className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-300 text-lg">{step.description}</CardDescription>
-                </CardContent>
-              </Card>
+                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </div>
+              </div>
+              {index < steps.length - 1 && (
+                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <ArrowRight className="w-8 h-8 text-blue-500/30 dark:text-blue-500/50" />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

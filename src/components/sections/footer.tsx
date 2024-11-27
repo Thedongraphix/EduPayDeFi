@@ -40,17 +40,19 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="bg-muted/30">
+    <footer className="relative bg-gradient-to-b from-white to-blue-50 dark:from-background dark:to-blue-950/20">
       <div className="container px-4 mx-auto py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-sm font-semibold mb-4">Product</h3>
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Product
+            </h3>
             <ul className="space-y-3">
               {navigation.product.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -59,13 +61,15 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-4">Company</h3>
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Company
+            </h3>
             <ul className="space-y-3">
               {navigation.company.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -74,13 +78,15 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-4">Support</h3>
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Support
+            </h3>
             <ul className="space-y-3">
               {navigation.support.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -89,13 +95,15 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-4">Connect</h3>
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Connect
+            </h3>
             <div className="flex space-x-4">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-5 w-5" />
@@ -104,7 +112,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-12 pt-8 border-t border-blue-100 dark:border-blue-900">
           <p className="text-sm text-muted-foreground text-center">
             © {new Date().getFullYear()} EduPay. All rights reserved.
           </p>

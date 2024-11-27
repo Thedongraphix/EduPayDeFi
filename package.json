@@ -38,6 +38,7 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@reown/appkit": "^1.4.1",
     "@reown/appkit-adapter-ethers": "^1.4.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tremor/react": "^3.18.4",
     "@types/istanbul-reports": "^3.0.4",
     "@types/stack-utils": "^2.0.3",
