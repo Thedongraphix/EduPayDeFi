@@ -61,17 +61,16 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/happysmiling.jpg"
-                alt="Students learning"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
-            </div>
-            
+      <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+  <Image
+    src="/images/happysmiling.jpg"
+    alt="Students learning"
+    width={500}
+    height={500}
+    className="object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent rounded-2xl" />
+</div>
             {/* Floating elements */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}

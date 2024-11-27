@@ -89,9 +89,11 @@ export function Navbar() {
                 <Button variant="outline" className="w-full">
                   Sign In
                 </Button>
+                <Link href="/dashboard">
                 <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600">
                   <Wallet className="mr-2 h-4 w-4" /> Connect Wallet
                 </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
