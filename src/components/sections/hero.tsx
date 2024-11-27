@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wallet } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -46,9 +47,11 @@ export function Hero() {
               Secure, instant, and borderless payments for educational institutions. Join the future of school fee transactions.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <Link href ='/dashboard' >
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600">
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+              </Link>
             </div>
           </motion.div>
 
