@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'EduPay - Revolutionary School Payments',
-  description: 'Transform school payments with cryptocurrency',
+  description: 'Crypto payment solution for education institutions',
 };
 
 export default function RootLayout({

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Wallet } from "lucide-react";
+import { Web3ModalButton } from "@/context/web3modal";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -46,9 +47,8 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline">Sign In</Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-indigo-600">
-              <Wallet className="mr-2 h-4 w-4" /> Connect Wallet
-            </Button>
+            {/* Connect Wallet Button */}
+            <Web3ModalButton />
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,11 +89,11 @@ export function Navbar() {
                 <Button variant="outline" className="w-full">
                   Sign In
                 </Button>
-                <Link href="/dashboard">
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600">
-                  <Wallet className="mr-2 h-4 w-4" /> Connect Wallet
-                </Button>
-                </Link>
+                <div className="flex items-center">
+               {/* Add left margin to account for mobile menu button */}
+                <div className="md:hidden w-12"></div>
+                <Web3ModalButton />
+                </div>
               </div>
             </div>
           </motion.div>
