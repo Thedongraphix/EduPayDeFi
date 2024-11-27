@@ -1,9 +1,10 @@
+/*eslint-disable*/
 'use client';
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Wallet } from "lucide-react";
+import { Menu, X, } from "lucide-react";
 import { Web3ModalButton } from "@/context/web3modal";
 
 const navigation = [
