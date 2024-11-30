@@ -57,7 +57,7 @@ export default function PaymentPage() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button className="w-full" size="lg">
-                    Complete Payment
+                    Initiate Payment
                   </Button>
                 </motion.div>
 
