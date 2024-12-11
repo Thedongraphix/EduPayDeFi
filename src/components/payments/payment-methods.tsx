@@ -59,13 +59,7 @@ export function PaymentMethods({ value, onValueChange }: PaymentMethodsProps) {
             id="card"
             className="peer sr-only"
           />
-          <Label
-            htmlFor="card"
-            className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer transition-all hover:scale-105"
-          >
-            <CreditCard className="mb-2 h-6 w-6" />
-            Card
-          </Label>
+          
         </motion.div>
 
         <motion.div variants={item}>
