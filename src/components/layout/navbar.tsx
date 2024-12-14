@@ -107,7 +107,10 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
+            <Link
+             href="/signin">
             <Button variant="outline">Sign In</Button>
+            </Link>
             <Web3ModalButton />
           </div>
 
