@@ -23,6 +23,26 @@ const navigation = [
   },
 ];
 
+const slideVariants = {
+  hidden: { x: "100%" },
+  visible: { 
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 30
+    }
+  },
+  exit: { 
+    x: "100%",
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 30
+    }
+  }
+};
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +56,18 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -62,7 +94,7 @@ export function Navbar() {
                 {item.children ? (
                   <button
                     onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                    className="flex items-center text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out hover:scale-110"
+                    className="flex items-center text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out"
                   >
                     {item.name}
                     <ChevronDown className="ml-1 h-4 w-4" />
@@ -70,7 +102,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out hover:scale-110"
+                    className="text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out"
                   >
                     {item.name}
                   </Link>
@@ -107,9 +139,8 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
-             href="/signin">
-            <Button variant="outline">Sign In</Button>
+            <Link href="/signin">
+              <Button variant="outline">Sign In</Button>
             </Link>
             <Web3ModalButton />
           </div>
@@ -128,73 +159,107 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden border-t"
-          >
-            <div className="container mx-auto px-4 py-4 space-y-4 bg-background/95 backdrop-blur-lg">
-              {navigation.map((item) => (
-                <div key={item.name}>
-                  {item.children ? (
-                    <div>
-                      <button
-                        onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                        className="flex items-center justify-between w-full text-left text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out hover:scale-105"
-                      >
-                        {item.name}
-                        <ChevronDown className="h-4 w-4" />
-                      </button>
-                      <AnimatePresence>
-                        {activeDropdown === item.name && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="mt-2 space-y-2 pl-4"
-                          >
-                            {item.children.map((subItem) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="block text-sm text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out hover:scale-105"
-                                onClick={() => setIsOpen(false)}
-                              >
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="block text-muted-foreground hover:text-primary transition-all duration-300 ease-in-out hover:scale-105"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-background/80 backdrop-blur-sm lg:hidden"
+            />
+            
+            {/* Sliding Menu */}
+            <motion.div
+              variants={slideVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed top-0 right-0 bottom-0 w-[300px] bg-background shadow-xl lg:hidden overflow-y-auto"
+            >
+              <div className="p-6 space-y-6">
+                {/* Close Button */}
+                <div className="flex justify-end">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Close Menu"
+                  >
+                    <X className="h-6 w-6" />
+                  </Button>
                 </div>
-              ))}
-              <div className="pt-4 space-y-4">
-                <Button variant="outline" className="w-full">
-                  Sign In
-                </Button>
-                <Web3ModalButton />
+
+                {/* Mobile Navigation Links */}
+                <div className="space-y-4">
+                  {navigation.map((item) => (
+                    <div key={item.name} className="py-2">
+                      {item.children ? (
+                        <div>
+                          <button
+                            onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                            className="flex items-center justify-between w-full text-left text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {item.name}
+                            <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
+                              activeDropdown === item.name ? 'rotate-180' : ''
+                            }`} />
+                          </button>
+                          <AnimatePresence>
+                            {activeDropdown === item.name && (
+                              <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="mt-2 ml-4 space-y-2"
+                              >
+                                {item.children.map((subItem) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="block text-muted-foreground hover:text-primary transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Mobile CTA Buttons */}
+                <div className="space-y-4 pt-6 border-t">
+                  <Link href="/signin" className="block">
+                    <Button variant="outline" className="w-full">
+                      Sign In
+                    </Button>
+                  </Link>
+                  <div className="w-full">
+                    <Web3ModalButton />
+                  </div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
   );
 }
-
