@@ -1,9 +1,8 @@
 'use client'
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Card } from "@/components/ui/card";
-import { Shield, Lock, Award, GraduationCap, Users, School } from "lucide-react";
-import Image from "next/image";
+import {  GraduationCap, Users, School } from "lucide-react";
+
 
 const stats = [
   { icon: GraduationCap, value: "98%", label: "Graduation Rate" },

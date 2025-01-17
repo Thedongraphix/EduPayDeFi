@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client'
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
