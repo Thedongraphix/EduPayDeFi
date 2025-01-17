@@ -112,24 +112,25 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
-
+          {/* Adjusted image section with better mobile responsiveness */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative"
+            className="relative lg:ml-6 max-w-[80%] sm:max-w-[75%] md:max-w-[80%] mx-auto lg:mx-0 mt-12 mb-12 lg:my-0"
           >
-      <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
-  <Image
-    src="/images/happysmiling.jpg"
-    alt="Students learning"
-    width={500}
-    height={500}
-    className="object-cover"
-  />
-  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent rounded-2xl" />
-</div>
-            {/* Floating elements */}
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
+              <Image
+                src="/images/happysmiling.jpg"
+                alt="Students using mobile payment"
+                width={800}
+                height={600}
+                className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                priority
+              />
+            </div>
+
+            {/* Adjusted floating elements positioning for better mobile visibility */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -143,11 +144,11 @@ export function Hero() {
                   ease: "easeInOut",
                 },
               }}
-              className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg"
+              className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
             >
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <span className="text-sm font-medium">Instant Payments</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Wallet className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                <span className="text-xs sm:text-sm font-medium">Instant Payments</span>
               </div>
             </motion.div>
 
@@ -164,11 +165,11 @@ export function Hero() {
                   ease: "easeInOut",
                 },
               }}
-              className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg"
+              className="absolute -top-4 right-4 sm:-top-6 sm:right-6 bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
             >
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                <span className="text-sm font-medium">Secure Transactions</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
+                <span className="text-xs sm:text-sm font-medium">Secure & Safe</span>
               </div>
             </motion.div>
           </motion.div>
