@@ -44,7 +44,7 @@ export function Footer() {
       <div className="container px-4 mx-auto py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-white dark:to-white bg-clip-text text-transparent">
               Product
             </h3>
             <ul className="space-y-3">
@@ -52,7 +52,7 @@ export function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-sm text-muted-foreground dark:text-white/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -61,7 +61,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-white dark:to-white bg-clip-text text-transparent">
               Company
             </h3>
             <ul className="space-y-3">
@@ -69,7 +69,7 @@ export function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-sm text-muted-foreground dark:text-white/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -78,7 +78,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-white dark:to-white bg-clip-text text-transparent">
               Support
             </h3>
             <ul className="space-y-3">
@@ -86,7 +86,7 @@ export function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-sm text-muted-foreground dark:text-white/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -95,7 +95,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <h3 className="text-sm font-semibold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-white dark:to-white bg-clip-text text-transparent">
               Connect
             </h3>
             <div className="flex space-x-4">
@@ -103,7 +103,7 @@ export function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                  className="text-muted-foreground dark:text-white/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-5 w-5" />
@@ -112,8 +112,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-blue-100 dark:border-blue-900">
-          <p className="text-sm text-muted-foreground text-center">
+        <div className="mt-12 pt-8">
+          <p className="text-sm text-muted-foreground dark:text-white/70 text-center">
             © {new Date().getFullYear()} EduPay. All rights reserved.
           </p>
         </div>

@@ -44,6 +44,8 @@
     --chart-4: 43 74% 66%;
 
     --chart-5: 27 87% 67%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   }
 
   .dark {
@@ -85,6 +87,10 @@
     --chart-4: 280 65% 60%;
 
     --chart-5: 340 75% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(240 30% 10%) 0%, hsl(260 30% 15%) 50%, hsl(280 30% 10%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240 30% 8%) 0%, hsl(260 30% 12%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(240 40% 15%) 0%, hsl(260 40% 20%) 100%);
   }
 }
 
@@ -97,7 +103,12 @@
   }
 }
 .animated-gradient {
-  background: linear-gradient(135deg, #1a237e, #8e24aa, #3f51b5);
+  @apply bg-background;
+  background: linear-gradient(135deg, 
+    hsl(240 30% 10%),
+    hsl(260 30% 15%),
+    hsl(280 30% 10%)
+  );
   background-size: 400% 400%;
   animation: gradientMove 8s ease infinite;
 }
@@ -119,4 +130,16 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.bg-gradient-accent {
+  background: var(--gradient-accent);
 }

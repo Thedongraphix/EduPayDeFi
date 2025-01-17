@@ -11,9 +11,15 @@ import { Footer } from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative min-h-screen bg-background">
+      {/* Common background with subtle gradient and pattern */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+      </div>
+      
       <Navbar />
-      <main className="min-h-screen bg-background pt-16">
+      <main className="relative pt-16">
         <Hero />
         <StatsCounter />
         <Features />
@@ -24,6 +30,6 @@ export default function Home() {
         <CTASection />
         <Footer />
       </main>
-    </>
+    </div>
   );
 }

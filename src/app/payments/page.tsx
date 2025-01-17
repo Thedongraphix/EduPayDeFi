@@ -12,7 +12,7 @@ export default function PaymentPage() {
   const [paymentMethod, setPaymentMethod] = useState("crypto");
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 px-4 py-8 md:py-16">
+    <div className="min-h-screen bg-background">
       <div className="container max-w-6xl mx-auto">
         <motion.div 
           className="flex flex-col items-center justify-center"

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Web3ModalButton } from "@/context/web3modal";
+/*import { ThemeToggle } from "@/components/Toggle";*/
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -81,11 +82,13 @@ export function Navbar() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-white dark:to-white bg-clip-text text-transparent"
             >
               EduPay
             </motion.div>
           </Link>
+
+          {/*<ThemeToggle />*/}
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -137,10 +140,13 @@ export function Navbar() {
             ))}
           </div>
 
+          
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link href="/signin">
-              <Button variant="outline">Sign In</Button>
+              <Button variant="outline" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white border-0">
+                Sign In
+              </Button>
             </Link>
             <Web3ModalButton />
           </div>
@@ -247,7 +253,7 @@ export function Navbar() {
                 {/* Mobile CTA Buttons */}
                 <div className="space-y-4 pt-6 border-t">
                   <Link href="/signin" className="block">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white border-0">
                       Sign In
                     </Button>
                   </Link>

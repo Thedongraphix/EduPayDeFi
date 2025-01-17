@@ -71,11 +71,14 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      fontFamily: {
+        sans: ['var(--font-plus-jakarta-sans)'],
+      },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
-    require("@tailwindcss/aspect-ratio"), // Added aspect ratio plugin
+    require("@tailwindcss/aspect-ratio"),
   ],
 } satisfies Config;
 
