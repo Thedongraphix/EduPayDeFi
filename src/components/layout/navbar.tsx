@@ -9,7 +9,7 @@ import { Web3ModalButton } from "@/context/web3modal";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Pricing", href: "/pricing" },
+  { name: "Dashboard", href: "/dashboard" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   {
