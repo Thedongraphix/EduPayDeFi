@@ -10,7 +10,7 @@ import { Web3ModalButton } from "@/context/web3modal";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Dashboard", href: "/dashboard" },
-  { name: "About", href: "/about" },
+  { name: "Payments", href: "/payments" },
   { name: "Contact", href: "/contact" },
   {
     name: "Resources",
@@ -29,7 +29,7 @@ const slideVariants = {
     x: 0,
     transition: {
       type: "spring",
-      stiffness: 300,
+      stiffness: 150,
       damping: 30
     }
   },
@@ -37,7 +37,7 @@ const slideVariants = {
     x: "100%",
     transition: {
       type: "spring",
-      stiffness: 300,
+      stiffness: 150,
       damping: 30
     }
   }
