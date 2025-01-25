@@ -44,7 +44,7 @@ export function TrustIndicators() {
           <div className="mb-8">
           </div>
           <h1  className="text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-white dark:to-white bg-clip-text text-transparent">
-            Our Impact in Numbers
+            Our Impact 
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Join thousands of students and institutions who trust EduPay for their educational journey

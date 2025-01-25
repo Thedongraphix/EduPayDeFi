@@ -78,7 +78,7 @@ export function HowItWorks() {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground"
           >
-            Simple steps to revolutionize your educational payments
+            Simple steps to revolutionize your payments
           </motion.p>
         </motion.div>
 
