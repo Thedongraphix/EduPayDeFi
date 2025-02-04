@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/sonner';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -26,12 +25,12 @@ export default function DashboardLayout({
 
       {/* Mobile sidebar */}
       <Sheet>
-        <SheetTrigger asChild className="md:hidden absolute left-4 top-4">
+        <SheetTrigger asChild className="md:hidden fixed left-4 top-4 z-50">
           <Button variant="ghost" size="icon">
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="p-0 w-64">
+        <SheetContent side="left" className="p-0 w-64 z-50">
           <Sidebar />
         </SheetContent>
       </Sheet>
@@ -43,7 +42,7 @@ export default function DashboardLayout({
           {children}
         </main>
       </div>
-
+    
       <Toaster />
     </div>
   );
