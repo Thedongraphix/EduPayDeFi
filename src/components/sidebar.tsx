@@ -5,12 +5,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
-  GraduationCap,
   CreditCard,
-  Users,
-  Settings,
   Wallet,
-  BookOpen,
   LogOut,
 } from "lucide-react";
 import { Web3ModalButton } from '@/context/web3modal';
