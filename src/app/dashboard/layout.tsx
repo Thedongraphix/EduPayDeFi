@@ -9,6 +9,7 @@ import Header from '@/components/headers';
 import { useState } from 'react';
 
 
+
 // Note: metadata export won't work in a client component
 // Move this to a separate layout file if needed
 // export const metadata: Metadata = {
@@ -40,9 +41,8 @@ export default function DashboardLayout({
         <SheetContent 
           side="left" 
           className="p-0 w-64"
-          // The close button from Sheet will be used instead
         >
-          <Sidebar />
+          <Sidebar onClose={() => setIsOpen(false)} />
         </SheetContent>
       </Sheet>
 

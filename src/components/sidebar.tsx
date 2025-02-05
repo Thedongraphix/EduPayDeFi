@@ -14,7 +14,7 @@ import {
 import { Web3ModalButton } from '@/context/web3modal';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
+
 
 const routes = [
   {
@@ -42,12 +42,18 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
   return (
     <div className="h-full w-full bg-background">
       <div className="flex flex-col h-full border-r bg-background w-full md:w-64 fixed md:relative z-50">
-        <div className="p-6">
+        <div className="p-6 flex justify-between items-center">
           <Link href="/dashboard">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Edupay
             </h1>
           </Link>
+          <button
+            onClick={onClose}
+            className="md:hidden p-2 rounded-lg hover:bg-accent/50 text-muted-foreground hover:text-primary transition-colors"
+          >
+            <X className="h-5 w-5" />
+          </button>
         </div>
         
         <nav className="flex-1 px-4 space-y-1 overflow-y-auto">
@@ -80,10 +86,11 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Avatar className="h-9 w-9">
-                <AvatarImage src="/placeholder-avatar.jpg" alt="User" />
+                <AvatarImage src="/images/happysmiling.jpg" alt="User" />
                 <AvatarFallback>CO</AvatarFallback>
               </Avatar>
               <div className="flex flex-col">
+
                 <span className="text-sm font-medium">Chris Oketch</span>
                 <span className="text-xs text-muted-foreground">user@example.com</span>
               </div>

@@ -54,7 +54,7 @@ export function RecentPayments() {
             <div className={payment.status === "pending" ? "text-yellow-500" : "text-green-500"}>
               ${payment.amount}
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="text-xs text-muted-foreground">  
               {new Date(payment.date).toLocaleDateString()}
             </div>
           </div>
