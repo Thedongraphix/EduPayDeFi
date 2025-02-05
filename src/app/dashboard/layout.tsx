@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/sonner';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
