@@ -85,9 +85,13 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
           {/* User Profile Section */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Avatar className="h-9 w-9">
-                <AvatarImage src="/images/avatar.jpg" alt="User" />
-                <AvatarFallback>CO</AvatarFallback>
+              <Avatar className="h-10 w-10 border-2 border-primary/10">
+                <AvatarImage 
+                  src="/images/avatar.jpg" 
+                  alt="User" 
+                  className="object-cover"
+                />
+                <AvatarFallback className="bg-primary/5">CO</AvatarFallback>
               </Avatar>
               <div className="flex flex-col">
 
