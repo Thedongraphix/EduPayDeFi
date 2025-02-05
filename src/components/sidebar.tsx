@@ -40,17 +40,19 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname();
 
   return (
-    <div className="h-full w-full bg-background relative">
-      {/* Close button - only show on mobile */}
+    <div className="h-full w-full bg-background">
+      {/* Close button - show it prominently */}
       {onClose && (
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-2 top-2 md:hidden"
-          onClick={onClose}
-        >
-          <X className="h-5 w-5" />
-        </Button>
+        <div className="flex justify-end p-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onClose}
+            className="hover:bg-gray-100"
+          >
+            <X className="h-5 w-5" />
+          </Button>
+        </div>
       )}
       
       <div className="flex flex-col h-full border-r bg-background w-full md:w-64 fixed md:relative z-50">

@@ -37,8 +37,11 @@ export default function DashboardLayout({
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="p-0 w-64 z-50">
-          <Sidebar onClose={() => setIsOpen(false)} />
+        <SheetContent side="left" className="p-0 w-64">
+          <Sidebar onClose={() => {
+            console.log('Closing sidebar');
+            setIsOpen(false);
+          }} />
         </SheetContent>
       </Sheet>
 
