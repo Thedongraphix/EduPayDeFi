@@ -37,11 +37,12 @@ export default function DashboardLayout({
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="p-0 w-64">
-          <Sidebar onClose={() => {
-            console.log('Closing sidebar');
-            setIsOpen(false);
-          }} />
+        <SheetContent 
+          side="left" 
+          className="p-0 w-64"
+          // The close button from Sheet will be used instead
+        >
+          <Sidebar />
         </SheetContent>
       </Sheet>
 
