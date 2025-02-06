@@ -14,7 +14,7 @@ export default function PrivyProviderWrapper({ children }: PrivyProviderWrapperP
     <PrivyProvider
       appId='cm35xkh1r03bvcpeg8p67h8mn'
       config={{
-        loginMethods: ['email', 'wallet', 'google', 'farcaster'] ,
+        loginMethods: ['email', 'wallet','farcaster'] ,
         appearance: {
           theme: 'dark',
           accentColor: '#676FFF',
