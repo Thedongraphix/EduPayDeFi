@@ -2,6 +2,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
+import PrivyProviderWrapper from '@/components/providers/PrivyProvider';
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -16,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("antialiased", plusJakartaSans.variable)}>
       <body className={cn("min-h-screen bg-background font-sans")}>
-        {children}
+        <PrivyProviderWrapper>
+          {children}
+        </PrivyProviderWrapper>
       </body>
     </html>
   );

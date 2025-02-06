@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import LoginButton from "@/components/LoginButton";
 
 export default function SignUpPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -61,6 +62,7 @@ export default function SignUpPage() {
               >
                 {isLoading ? "Creating account..." : "Create Account"}
               </Button>
+              <LoginButton />
               <p className="text-sm text-center text-muted-foreground">
                 Already have an account?{" "}
                 <Link 

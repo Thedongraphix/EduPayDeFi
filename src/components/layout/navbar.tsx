@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Web3ModalButton } from "@/context/web3modal";
+import LoginButton from "@/components/LoginButton";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -140,12 +141,9 @@ export function Navbar() {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Link href="/signin">
-                <Button variant="outline" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white border-0">
-                  Sign In
-                </Button>
-              </Link>
-              <Web3ModalButton />
+              
+            <LoginButton />
+            <Web3ModalButton />
             </div>
 
             {/* Mobile Menu Button */}
