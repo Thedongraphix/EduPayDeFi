@@ -9,17 +9,16 @@ interface PrivyProviderWrapperProps {
 }
 
 export default function PrivyProviderWrapper({ children }: PrivyProviderWrapperProps) {
-  const router = useRouter();
-
+  
   return (
     <PrivyProvider
       appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || ''}
       config={{
         loginMethods: ['email', 'wallet', 'google', 'apple', 'farcaster'] ,
         appearance: {
-          theme: 'light',
+          theme: 'dark',
           accentColor: '#676FFF',
-          showWalletLoginFirst: true,
+          showWalletLoginFirst: false,
         },
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
