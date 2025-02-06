@@ -248,11 +248,9 @@ export function Navbar() {
 
                 {/* Mobile CTA Buttons */}
                 <div className="space-y-4 pt-6 border-t">
-                  <Link href="/signin" className="block">
-                    <Button variant="outline" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white border-0">
-                      Sign In
-                    </Button>
-                  </Link>
+                  <div className="w-full">
+                    <LoginButton />
+                  </div>
                   <div className="w-full">
                     <Web3ModalButton />
                   </div>
