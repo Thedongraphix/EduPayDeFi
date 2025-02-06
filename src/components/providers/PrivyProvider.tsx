@@ -2,7 +2,7 @@
 'use client';
 
 import { PrivyProvider } from '@privy-io/react-auth';
-import { useRouter } from 'next/navigation';
+
 
 interface PrivyProviderWrapperProps {
   children: React.ReactNode;
