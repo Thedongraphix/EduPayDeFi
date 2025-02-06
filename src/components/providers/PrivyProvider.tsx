@@ -12,9 +12,9 @@ export default function PrivyProviderWrapper({ children }: PrivyProviderWrapperP
   
   return (
     <PrivyProvider
-      appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || ''}
+      appId='cm35xkh1r03bvcpeg8p67h8mn'
       config={{
-        loginMethods: ['email', 'wallet', 'google', 'apple', 'farcaster'] ,
+        loginMethods: ['email', 'wallet', 'google', 'farcaster'] ,
         appearance: {
           theme: 'dark',
           accentColor: '#676FFF',
