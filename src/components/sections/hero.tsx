@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-0">
       {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -48,7 +48,7 @@ export function Hero() {
       </div>
 
       <div className="container px-4 mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-8 md:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
