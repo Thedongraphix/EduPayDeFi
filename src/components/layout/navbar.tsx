@@ -251,10 +251,9 @@ export function Navbar() {
                 {/* Mobile CTA Buttons */}
                 <div className="space-y-4 pt-6 border-t">
                   <div className="w-full">
-                   
+                  <LoginButton />
                   </div>
                   <div className="w-full">
-                    <LoginButton />
                     <Web3ModalButton />
                   </div>
                 </div>
