@@ -254,6 +254,7 @@ export function Navbar() {
                    
                   </div>
                   <div className="w-full">
+                    <LoginButton />
                     <Web3ModalButton />
                   </div>
                 </div>
