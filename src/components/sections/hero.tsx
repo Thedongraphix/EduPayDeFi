@@ -55,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="text-center lg:text-left"
           >
-            {/* Enhanced badge */}
+            {/* Enhanced badge 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,6 +67,7 @@ export function Hero() {
                 Revolutionizing Education Payments
               </span>
             </motion.div>
+            */}
 
             {/* Enhanced heading with animated gradient */}
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
