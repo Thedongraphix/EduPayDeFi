@@ -1,31 +1,24 @@
-// src/app/providers/PrivyProvider.tsx
 'use client';
 
-import { PrivyProvider } from '@privy-io/react-auth';
+import {PrivyProvider} from '@privy-io/react-auth';
 
-
-interface PrivyProviderWrapperProps {
-  children: React.ReactNode;
-}
-
-export default function PrivyProviderWrapper({ children }: PrivyProviderWrapperProps) {
-  
+export default function Providers({children}: {children: React.ReactNode}) {
   return (
     <PrivyProvider
-      appId='cm35xkh1r03bvcpeg8p67h8mn'
+      appId="cm35xkh1r03bvcpeg8p67h8mn"
       config={{
-        loginMethods: ['email',], 
+        // Customize Privy's appearance in your app
         appearance: {
+
           theme: 'dark',
           accentColor: '#676FFF',
-          showWalletLoginFirst: false,
+          logo: 'https://imgur.com/a/OH9uEDj',
         },
+        // Create embedded wallets for users who don't have a wallet
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
         },
-     
       }}
-      
     >
       {children}
     </PrivyProvider>

@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Web3ModalButton } from "@/context/web3modal";
 import LoginButton from "@/components/LoginButton";
 
+
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Dashboard", href: "/dashboard" },
@@ -141,10 +142,11 @@ export function Navbar() {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              
             <LoginButton />
-            <Web3ModalButton />
+            {/*<LoginButton />*/}
+            <Web3ModalButton /> 
             </div>
+
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
@@ -249,7 +251,7 @@ export function Navbar() {
                 {/* Mobile CTA Buttons */}
                 <div className="space-y-4 pt-6 border-t">
                   <div className="w-full">
-                    <LoginButton />
+                   
                   </div>
                   <div className="w-full">
                     <Web3ModalButton />
