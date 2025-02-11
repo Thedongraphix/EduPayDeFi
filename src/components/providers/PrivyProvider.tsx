@@ -12,9 +12,11 @@ export default function Providers({children}: {children: React.ReactNode}) {
 
           theme: 'dark',
           accentColor: '#676FFF',
-          logo: '',
+          showWalletLoginFirst: false,
+         
         },
         // Create embedded wallets for users who don't have a wallet
+
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
         },
