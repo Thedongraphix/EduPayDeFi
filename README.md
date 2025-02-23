@@ -1,6 +1,6 @@
 ### **Edupay - Revolutionizing School Payments with Blockchain**  
 
-![Edupay Logo](/edupay.png)  
+![Edupay Logo](https://i.imgur.com/WHpkFuJ.png)
 
 ---
 
