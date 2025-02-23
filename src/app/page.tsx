@@ -1,13 +1,13 @@
 import { Navbar } from "@/components/layout/navbar";
-import { Hero } from "@/components/sections/hero";
-import { Features } from "@/components/sections/features";
+import { Hero } from "@/components/providers/sections/hero";
+import { Features } from "@/components/providers/sections/features";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { StatsCounter } from "@/components/landing/stats-counter";
 import { TrustIndicators } from "@/components/landing/trust-indicators";
-import { Testimonials } from "@/components/sections/testimonials";
-import { FAQ } from "@/components/sections/faq";
+import { Testimonials } from "@/components/providers/sections/testimonials";
+import { FAQ } from "@/components/providers/sections/faq";
 import { CTASection } from "@/components/landing/cta-section";
-import { Footer } from "@/components/sections/footer";
+import { Footer } from "@/components/providers/sections/footer";
 
 export default function Home() {
   return (
