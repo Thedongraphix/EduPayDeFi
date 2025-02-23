@@ -78,7 +78,7 @@ Traditional school payment systems suffer from:
 ## 🎉 **Get Started**  
 ### **Run Locally**  
 ```bash
-git clone https://github.com/your-repo/edupay.git
+git clone https://github.com/Thedongraphix/EduPayDeFi.git
 cd edupaydefi
 npm install
 npm run dev
