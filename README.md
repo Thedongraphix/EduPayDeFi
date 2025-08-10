@@ -18,7 +18,7 @@ Traditional school payment systems suffer from:
 - **Limited accessibility** – Unbanked parents struggle to make direct school payments.  
 - **Manual reconciliation** – Schools manually track payments, leading to errors.  
 
-**Edupay solves these challenges** by offering an **on-chain, automated, and accessible** payment system on EDU Chain.  
+**Edupay solves these challenges** by offering an **on-chain, automated, and accessible** payment system on EDU Chain and the base ecosystem 
 
 ---
 
